@@ -8,6 +8,11 @@ pmr2.rdf.egg-info/dependency_links.txt
 pmr2.rdf.egg-info/entry_points.txt
 pmr2.rdf.egg-info/namespace_packages.txt
 pmr2.rdf.egg-info/not-zip-safe
+pmr2.rdf.egg-info/paster_plugins.txt
 pmr2.rdf.egg-info/requires.txt
 pmr2.rdf.egg-info/top_level.txt
 pmr2/rdf/__init__.py
+pmr2/rdf/base.py
+pmr2/rdf/graph.py
+pmr2/rdf/tests/__init__.py
+pmr2/rdf/tests/test_base.py
