@@ -20,7 +20,6 @@ class RdfXmlObject(object):
         self.graph = None
         self.dom = None
         self.subgraphIds = []
-        self.nsmap = {}
 
     def parse(self, input):
         """\
@@ -36,11 +35,14 @@ class RdfXmlObject(object):
         self.dom = etree.parse(input)
         self.subgraphIds = []  # maps line number in source to subgraph
 
-        nsmap = self.dom.getroot().nsmap
-        del(nsmap[None])
-        self.nsmap = nsmap
+        rdfnodes = []
+        xpath_expr = [
+            './/rdf:RDF',
+            '/rdf:RDF',
+        ]
+        for expr in xpath_expr:
+            rdfnodes.extend(self.dom.xpath(expr, namespaces=namespaces))
 
-        rdfnodes = self.dom.xpath('.//rdf:RDF', namespaces=namespaces)
         for node in rdfnodes:
             s = StringIO(etree.tostring(node))
             s.seek(0)

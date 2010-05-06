@@ -30,6 +30,10 @@ class BaseTestCase(unittest.TestCase):
         self.parse(join(input_dir, 'well-formed-3-node.xml'))
         self.assertEqual(len(self.file.subgraphIds), 3)
 
+    def test_0001_simple(self):
+        self.parse(join(input_dir, 'simple.rdf'))
+        self.assertEqual(len(self.file.subgraphIds), 1)
+
 def test_suite():
     suite = unittest.TestSuite()
     suite.addTest(unittest.makeSuite(BaseTestCase))
