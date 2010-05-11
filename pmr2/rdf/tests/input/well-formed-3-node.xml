@@ -10,8 +10,11 @@
 
   <rdf:RDF>
     <rdf:Description rdf:about="">
-      <dc:title>Test XML 3 node</dc:title>
       <dc:creator>Tommy</dc:creator>
+      <dc:title>Test XML 3 node</dc:title>
+      <dc:description>
+        A test RDF/XML document
+      </dc:description>
       <pmr2:annotation rdf:parseType="Resource">
         <pmr2:type 
             rdf:resource="http://namespace.physiomeproject.org/pmr2/note#ex"/>
