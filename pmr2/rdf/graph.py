@@ -12,7 +12,7 @@ except ImportError:
         def parse(self, source, publicID=None, format="xml", **args):
             source = self.prepare_input_source(source, publicID)
             id = publicID and \
-                self.context_id(self.absolutize(source.getPublicId()))
+                self.context_id(source.getPublicId())
             context = Graph(store=self.store, identifier=id)
             context.remove((None, None, None))
             context.parse(source, publicID=publicID, format=format, **args)
