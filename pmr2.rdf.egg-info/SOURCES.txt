@@ -1,3 +1,4 @@
+MANIFEST.in
 README.txt
 setup.cfg
 setup.py
@@ -12,7 +13,13 @@ pmr2.rdf.egg-info/paster_plugins.txt
 pmr2.rdf.egg-info/requires.txt
 pmr2.rdf.egg-info/top_level.txt
 pmr2/rdf/__init__.py
+pmr2/rdf/adapter.py
+pmr2/rdf/annotation.py
 pmr2/rdf/base.py
+pmr2/rdf/configure.zcml
 pmr2/rdf/graph.py
 pmr2/rdf/tests/__init__.py
 pmr2/rdf/tests/test_base.py
+pmr2/rdf/tests/input/partial_dc.rdf
+pmr2/rdf/tests/input/simple.rdf
+pmr2/rdf/tests/input/well-formed-3-node.xml
