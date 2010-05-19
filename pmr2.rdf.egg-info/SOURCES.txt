@@ -1,3 +1,4 @@
+MANIFEST.in
 README.txt
 setup.cfg
 setup.py
@@ -17,3 +18,6 @@ pmr2/rdf/graph.py
 pmr2/rdf/util.py
 pmr2/rdf/tests/__init__.py
 pmr2/rdf/tests/test_base.py
+pmr2/rdf/tests/input/partial_dc.rdf
+pmr2/rdf/tests/input/simple.rdf
+pmr2/rdf/tests/input/well-formed-3-node.xml
