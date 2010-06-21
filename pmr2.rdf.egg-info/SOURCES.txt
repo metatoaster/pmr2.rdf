@@ -15,7 +15,6 @@ pmr2.rdf.egg-info/top_level.txt
 pmr2/rdf/__init__.py
 pmr2/rdf/base.py
 pmr2/rdf/graph.py
-pmr2/rdf/util.py
 pmr2/rdf/tests/__init__.py
 pmr2/rdf/tests/test_base.py
 pmr2/rdf/tests/input/partial_dc.rdf

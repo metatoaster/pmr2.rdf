@@ -12,10 +12,11 @@ Description: Introduction
         Changelog
         =========
         
-        trunk - Unreleased
-        ----------------
+        0.1 - Released (2010-06-21)
+        ---------------------------
         
-        * Initial release
+        * A very basic RDF abstraction layer for PMR2.
+        * Serves as a base for other RDF function on files within PMR2.
         
         
 Platform: UNKNOWN
