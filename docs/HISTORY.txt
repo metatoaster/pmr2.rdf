@@ -1,6 +1,12 @@
 Changelog
 =========
 
+0.2 - Released (2010-04-08)
+---------------------------
+
+* Minor fixes related to packaging of this package.
+
+
 0.1 - Released (2010-06-21)
 ---------------------------
 
