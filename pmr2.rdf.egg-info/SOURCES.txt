@@ -2,6 +2,7 @@ MANIFEST.in
 README.txt
 setup.cfg
 setup.py
+docs/HISTORY.txt
 pmr2/__init__.py
 pmr2.rdf.egg-info/PKG-INFO
 pmr2.rdf.egg-info/SOURCES.txt
@@ -13,10 +14,7 @@ pmr2.rdf.egg-info/paster_plugins.txt
 pmr2.rdf.egg-info/requires.txt
 pmr2.rdf.egg-info/top_level.txt
 pmr2/rdf/__init__.py
-pmr2/rdf/adapter.py
-pmr2/rdf/annotation.py
 pmr2/rdf/base.py
-pmr2/rdf/configure.zcml
 pmr2/rdf/graph.py
 pmr2/rdf/tests/__init__.py
 pmr2/rdf/tests/test_base.py

@@ -1,6 +1,6 @@
 Metadata-Version: 1.0
 Name: pmr2.rdf
-Version: trunkdev
+Version: 0.3
 Summary: RDF handling for PMR2
 Home-page: http://www.bioeng.auckland.ac.nz/
 Author: Tommy Yu
@@ -12,10 +12,22 @@ Description: Introduction
         Changelog
         =========
         
-        trunk - Unreleased
-        ----------------
+        0.3 - Released (2010-08-17)
+        ---------------------------
         
-        * Initial release
+        * Added a simple helper method.
+        
+        0.2 - Released (2010-04-08)
+        ---------------------------
+        
+        * Minor fixes related to packaging of this package.
+        
+        
+        0.1 - Released (2010-06-21)
+        ---------------------------
+        
+        * A very basic RDF abstraction layer for PMR2.
+        * Serves as a base for other RDF function on files within PMR2.
         
         
 Platform: UNKNOWN
