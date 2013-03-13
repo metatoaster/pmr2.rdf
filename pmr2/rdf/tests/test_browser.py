@@ -21,7 +21,8 @@ setup()
 teardown()
 
 storage.DummyStorageUtility._dummy_storage_data['rdftest'] = [
-    {'test.rdf': """\
+    {
+    'test.rdf': """\
 <?xml version="1.0" encoding="utf-8"?>
 <ex xmlns="http://example.com/ex/1.0#"
     xmlns:dc="http://purl.org/dc/elements/1.1/"
@@ -49,6 +50,26 @@ storage.DummyStorageUtility._dummy_storage_data['rdftest'] = [
 
 </ex>
 """,
+
+    'brokenxml.rdf': """\
+<?xml version="1.0" encoding="utf-8"?>
+<ex xmlns="http://example.com/ex/1.0#"
+    xmlns:dc="http://purl.org/dc/elements/1.1/"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+
+  <node>
+    <node>
+      <rdf:RDF>
+        <rdf:Description rdf:about="#item">
+          <dc:creator>Example User</dc:creator>
+          <dc:title>Test RDF Document</dc:title>
+        </rdf:Description>
+      </rdf:RDF>
+  </node
+
+</ex>
+""",
+
 }]
 
 extracted = """\
@@ -65,6 +86,14 @@ extracted = """\
     <dc:creator>Second User</dc:creator>
     <dc:title>Second Item</dc:title>
   </rdf:Description>
+</rdf:RDF>
+"""
+
+empty = """\
+<?xml version="1.0" encoding="UTF-8"?>
+<rdf:RDF
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+>
 </rdf:RDF>
 """
 
@@ -88,3 +117,9 @@ class RdfViewDocTestCase(base.WorkspaceDocTestCase):
 
         self.assertEqual(self.testbrowser.headers['Content-type'],
             'application/rdf+xml')
+
+    def test_0001_broken(self):
+        self.testbrowser.open(self.portal.absolute_url() +
+            '/workspace/rdftest/pmr2_rdf/0/brokenxml.rdf')
+        contents = self.testbrowser.contents
+        self.assertEqual(contents, empty)

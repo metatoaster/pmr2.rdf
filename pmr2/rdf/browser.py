@@ -16,7 +16,10 @@ class RdfPage(FilePage):
         contents = self.data['contents']()
         s = StringIO(contents)
         rdf = RdfXmlObject()
-        rdf.parse(s)
+        try:
+            rdf.parse(s)
+        except:
+            pass
         contents = rdf.graph.serialize()
 
         mimetype = 'application/rdf+xml'
