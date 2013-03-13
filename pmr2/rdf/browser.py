@@ -1,0 +1,25 @@
+from cStringIO import StringIO
+
+import zope.interface
+import zope.component
+
+from pmr2.app.workspace.browser.browser import FilePage
+
+from pmr2.rdf.base import RdfXmlObject
+
+
+class RdfPage(FilePage):
+
+    def render(self):
+        super(RdfPage, self).update()
+
+        contents = self.data['contents']()
+        s = StringIO(contents)
+        rdf = RdfXmlObject()
+        rdf.parse(s)
+        contents = rdf.graph.serialize()
+
+        mimetype = 'application/rdf+xml'
+        self.request.response.setHeader('Content-Type', mimetype)
+        self.request.response.setHeader('Content-Length', len(contents))
+        return contents
