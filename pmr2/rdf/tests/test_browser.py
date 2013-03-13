@@ -6,6 +6,8 @@ from pmr2.app.workspace.content import WorkspaceContainer, Workspace
 from pmr2.app.workspace.tests import storage
 from pmr2.app.workspace.tests import base
 
+from pmr2.app.exposure.content import ExposureContainer, Exposure, ExposureFile
+
 @onsetup
 def setup():
     import pmr2.rdf
@@ -106,6 +108,14 @@ class RdfViewDocTestCase(base.WorkspaceDocTestCase):
         w.storage = 'dummy_storage' 
         self.portal.workspace['rdftest'] = w
 
+        self.portal['exposure'] = ExposureContainer()
+        e = Exposure('rdftest')
+        e.workspace = u'/plone/workspace/rdftest'
+        e.commit_id = u'0'
+        self.portal.exposure['rdftest'] = e
+        ef = ExposureFile('test.rdf')
+        self.portal.exposure.rdftest['test.rdf'] = ef
+
     def test_0000_base(self):
         self.testbrowser.open(self.portal.absolute_url() +
             '/workspace/rdftest/pmr2_rdf/0/test.rdf')
@@ -123,3 +133,9 @@ class RdfViewDocTestCase(base.WorkspaceDocTestCase):
             '/workspace/rdftest/pmr2_rdf/0/brokenxml.rdf')
         contents = self.testbrowser.contents
         self.assertEqual(contents, empty)
+
+    def test_0100_exposure_file_redirect(self):
+        self.testbrowser.open(self.portal.absolute_url() +
+            '/exposure/rdftest/test.rdf/pmr2_rdf')
+        self.assertEqual(self.testbrowser.url,
+            'http://nohost/plone/workspace/rdftest/@@pmr2_rdf/0/test.rdf')

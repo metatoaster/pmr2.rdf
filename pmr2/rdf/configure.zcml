@@ -13,6 +13,13 @@
         permission="zope2.View"
         />
 
+    <browser:page
+        for="pmr2.app.exposure.interfaces.IExposureFile"
+        name="pmr2_rdf"
+        class=".browser.ExposureRdfFileRedirect"
+        permission="zope2.View"
+        />
+
   </configure>
 
 </configure>
