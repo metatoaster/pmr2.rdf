@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 import os
 
-version = 'trunk'
+version = '0.5'
 
 setup(name='pmr2.rdf',
       version=version,
@@ -26,7 +26,8 @@ setup(name='pmr2.rdf',
           'setuptools',
           # -*- Extra requirements: -*-
           'lxml>2.0.5',
-          'rdflib==2.4.2',
+          'rdflib>=4',
+          'rdfextras',
       ],
       entry_points="""
       # -*- Entry points: -*-
