@@ -27,7 +27,6 @@ setup(name='pmr2.rdf',
           # -*- Extra requirements: -*-
           'lxml>2.0.5',
           'rdflib>=4',
-          'rdfextras',
       ],
       entry_points="""
       # -*- Entry points: -*-

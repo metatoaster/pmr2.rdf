@@ -5,10 +5,6 @@ import rdflib
 
 from rdflib.graph import ConjunctiveGraph, Graph
 PMR2Graph = ConjunctiveGraph
-rdflib.plugin.register('sparql', rdflib.query.Processor,
-                       'rdfextras.sparql.processor', 'Processor')
-rdflib.plugin.register('sparql', rdflib.query.Result,
-                       'rdfextras.sparql.query', 'SPARQLQueryResult')
 namespaces = {
     'rdf': 'http://www.w3.org/1999/02/22-rdf-syntax-ns#',
 }
