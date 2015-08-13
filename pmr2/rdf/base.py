@@ -14,6 +14,8 @@ class RdfXmlObject(object):
         'rdf': 'http://www.w3.org/1999/02/22-rdf-syntax-ns#',
     }
 
+    format = 'xml'
+
     def __init__(self):
         self._purge()
 
@@ -51,7 +53,7 @@ class RdfXmlObject(object):
         for node in rdfnodes:
             s = StringIO(etree.tostring(node))
             s.seek(0)
-            subgraph = self.graph.parse(s)
+            subgraph = self.graph.parse(s, format=self.format)
             self.subgraphIds.append((node.sourceline, subgraph.identifier))
 
     def mergeNs(self, otherNs):
