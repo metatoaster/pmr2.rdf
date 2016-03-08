@@ -1,13 +1,13 @@
 from setuptools import setup, find_packages
 import os
 
-version = '0.5'
+version = '1.0'
 
 setup(name='pmr2.rdf',
       version=version,
       description="RDF handling for PMR2",
-      long_description=open("README.txt").read() + "\n" +
-                       open(os.path.join("docs", "HISTORY.txt")).read(),
+      long_description=open("README.rst").read() + "\n" +
+                       open(os.path.join("docs", "HISTORY.rst")).read(),
       # Get more strings from http://www.python.org/pypi?%3Aaction=list_classifiers
       classifiers=[
         "Programming Language :: Python",

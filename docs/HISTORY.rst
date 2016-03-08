@@ -1,6 +1,11 @@
 Changelog
 =========
 
+1.0 - Released (2016-03-08)
+---------------------------
+
+* Major version bump to modern version of rdflib.
+
 0.4 - Released (2013-07-08)
 ---------------------------
 
